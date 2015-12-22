@@ -142,12 +142,21 @@ autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 "start plugin manager"
 call plug#begin('~/.vim/plugged')
-
+Plug 'avakhov/vim-yaml'
 Plug 'bling/vim-airline'
+
+" L9 is dependency for fuzzy finder "
+Plug 'eparreno/vim-l9'
 Plug 'flazz/vim-colorschemes'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'maksimr/vim-jsbeautify'
+Plug 'majutsushi/tagbar'
+Plug 'moll/vim-node'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'pangloss/vim-javascript'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-abolish'
@@ -169,6 +178,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'vim-scripts/FuzzyFinder'
+" Plug 'wincent/Command-T'
+" Plug 'vim-scripts/ShowMarks'
+" Plug 'ervandew/supertab'
+" Plug 'vim-scripts/taglist.vim'
+" 
 
   if $COLORTERM == 'gnome-terminal' || $TERM == 'xterm' || $TERM == 'screen'
     set t_Co=256
