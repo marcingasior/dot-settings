@@ -1,3 +1,5 @@
+set t_Co=256
+set background=dark
 " set line numbers"
 set nu
 " set files encoding
@@ -28,7 +30,7 @@ set backspace=indent,eol,start
 set mouse=a
 
 
-syntax enable
+" syntax enable
 syntax on
 
 " set leader to be ','"
@@ -139,6 +141,21 @@ autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
+" add extra enter when delimate add another {_} with Ctrl-C"
+" imap <C-c> <CR><Esc>O
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" These are the tweaks I apply to YCM's config, you don't need them but they
+" might help.
+" YCM gives you popups and splits by default that some people might not
+" like, so these should tidy it up a bit for you.
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
 
 "start plugin manager"
 call plug#begin('~/.vim/plugged')
@@ -148,12 +165,18 @@ Plug 'bling/vim-airline'
 " L9 is dependency for fuzzy finder "
 Plug 'eparreno/vim-l9'
 Plug 'flazz/vim-colorschemes'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'majutsushi/tagbar'
+" tern requires some config after install
+Plug 'marijnh/tern_for_vim'
 Plug 'moll/vim-node'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'othree/html5.vim'
+Plug 'othree/html5-syntax.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
@@ -183,13 +206,13 @@ Plug 'vim-scripts/FuzzyFinder'
 " Plug 'vim-scripts/ShowMarks'
 " Plug 'ervandew/supertab'
 " Plug 'vim-scripts/taglist.vim'
-" 
 
   if $COLORTERM == 'gnome-terminal' || $TERM == 'xterm' || $TERM == 'screen'
     set t_Co=256
   endif
 
   try
+    " colorscheme distinguished
     colorscheme Monokai
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert  
